@@ -72,6 +72,12 @@ public class Letra extends JFrame {
 		contentPane.add(btnSoma);
 		
 		JButton btnSubtracao = new JButton("Subtra\u00E7\u00E3o");
+		btnSubtracao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Sub();
+			}
+		});
+		
 		btnSubtracao.setBounds(254, 108, 110, 23);
 		contentPane.add(btnSubtracao);
 		
@@ -103,4 +109,9 @@ public class Letra extends JFrame {
 	private void Soma() {
 		tfresultado.setText(Double.toString(Double.parseDouble(tfnumero1.getText()) + Double.parseDouble(tfnumero2.getText())));
 	}
+	private void Sub() {
+		tfresultado.setText(Double.toString(Double.parseDouble(tfnumero1.getText()) - Double.parseDouble(tfnumero2.getText())));
+	}
+	
+	
 }
