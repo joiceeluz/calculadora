@@ -16,9 +16,9 @@ import java.awt.event.ActionEvent;
 public class Letra extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField tfnumero1;
+	private JTextField tfnumero2;
+	private JTextField tfresultado;
 
 	/**
 	 * Launch the application.
@@ -52,31 +52,36 @@ public class Letra extends JFrame {
 		lblCalculadora.setBounds(156, 11, 107, 28);
 		contentPane.add(lblCalculadora);
 		
-		textField = new JTextField();
-		textField.setBounds(111, 61, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tfnumero1 = new JTextField();
+		tfnumero1.setBounds(111, 61, 86, 20);
+		contentPane.add(tfnumero1);
+		tfnumero1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(222, 61, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		tfnumero2 = new JTextField();
+		tfnumero2.setBounds(222, 61, 86, 20);
+		contentPane.add(tfnumero2);
+		tfnumero2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Soma");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnSoma = new JButton("Soma");
+		btnSoma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Soma();
+			}
+		});
+		btnSoma.setBounds(57, 108, 116, 23);
+		contentPane.add(btnSoma);
+		
+		JButton btnSubtracao = new JButton("Subtra\u00E7\u00E3o");
+		btnSubtracao.setBounds(254, 108, 110, 23);
+		contentPane.add(btnSubtracao);
+		
+		JButton btnDivisao = new JButton("Divis\u00E3o");
+		btnDivisao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(57, 108, 116, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Subtra\u00E7\u00E3o");
-		btnNewButton_1.setBounds(254, 108, 110, 23);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnDiviso = new JButton("Divis\u00E3o");
-		btnDiviso.setBounds(254, 149, 110, 23);
-		contentPane.add(btnDiviso);
+		btnDivisao.setBounds(254, 149, 110, 23);
+		contentPane.add(btnDivisao);
 		
 		JButton btnMultiplicao = new JButton("Multiplica\u00E7\u00E3o");
 		btnMultiplicao.addActionListener(new ActionListener() {
@@ -86,13 +91,16 @@ public class Letra extends JFrame {
 		btnMultiplicao.setBounds(57, 149, 116, 23);
 		contentPane.add(btnMultiplicao);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(207, 211, 86, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		tfresultado = new JTextField();
+		tfresultado.setBounds(207, 211, 86, 20);
+		contentPane.add(tfresultado);
+		tfresultado.setColumns(10);
 		
 		JLabel lblResultado = new JLabel("Resultado:");
 		lblResultado.setBounds(111, 214, 62, 14);
 		contentPane.add(lblResultado);
+	}
+	private void Soma() {
+		tfresultado.setText(Double.toString(Double.parseDouble(tfnumero1.getText()) + Double.parseDouble(tfnumero2.getText())));
 	}
 }
