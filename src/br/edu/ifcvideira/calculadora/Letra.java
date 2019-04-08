@@ -92,6 +92,8 @@ public class Letra extends JFrame {
 		JButton btnMultiplicao = new JButton("Multiplica\u00E7\u00E3o");
 		btnMultiplicao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Mult();
+		
 			}
 		});
 		btnMultiplicao.setBounds(57, 149, 116, 23);
@@ -112,6 +114,8 @@ public class Letra extends JFrame {
 	private void Sub() {
 		tfresultado.setText(Double.toString(Double.parseDouble(tfnumero1.getText()) - Double.parseDouble(tfnumero2.getText())));
 	}
-	
+	private void Mult() {
+		tfresultado.setText(Double.toString(Double.parseDouble(tfnumero1.getText()) * Double.parseDouble(tfnumero2.getText())));
+	}
 	
 }
